@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+</head>
+<body>
+    <span id="parent">YOO</span>
+    <div id="users"></div>
+
+    <button hx-post="/clicked"
+            hx-trigger="click"
+            hx-target="#parent"
+            hx-swap="outerHTML"
+    >Say WOW!</button>
+
+    <button hx-get="/users"
+            hx-trigger="click"
+            hx-target="#users"
+            hx-swap="outerHTML"
+    >Get Users!</button>
+</body>
+</html>
