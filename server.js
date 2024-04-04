@@ -7,19 +7,21 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get('/users', (req, res) => {
+app.post('/target', (req, res) => {
     res.send(`
-        <ul>
-            <li>Tom</li> 
-            <li>Brady</li> 
-            <li>Sucks</li> 
-        </ul>
+        <span>Target rendered</span>
+    `);
+});
+
+app.post('/innerHTML', (req, res) => {
+    res.send(`
+        <span>inner HTML swapped</span>
  `);
 });
 
-app.post('/clicked', (req, res) => {
+app.post('/outerHTML', (req, res) => {
     res.send(`
-        <h1>WOW!</h1>
+        <span>outer HTML swapped</span>
  `);
 });
 
