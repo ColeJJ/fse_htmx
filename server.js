@@ -25,6 +25,13 @@ app.post('/outerHTML', (req, res) => {
  `);
 });
 
+app.post('/dialog', (req, res) => {
+    const response = req.header('hx-prompt')
+    res.send(`
+        <span>Entered String: ${response}</span>
+    `);
+});
+
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });

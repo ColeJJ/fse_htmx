@@ -25,5 +25,18 @@
             hx-trigger="click"
             hx-swap="outerHTML"
     >Swap outer HTML!</button>
+
+    <h3>Dialog Window</h3>
+    <div>
+        <span class="btn"
+                hx-trigger="click"
+                hx-post="/dialog"
+                hx-prompt="Enter a string"
+                hx-confirm="Are you sure?"
+                hx-target="#response">
+            Click this span to enter a dialog window
+        </span>
+        <div id="response"></div>
+    </div>
 </body>
 </html>
