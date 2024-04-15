@@ -3,30 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./../public/css/styles.css">
+    <script
+            src="https://unpkg.com/htmx.org@1.9.11"
+            integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0"
+            crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <h2>REQUEST TYPES</h2>
+    <!-- TODO:
+        REQUEST TYPES
+        hx-get - issues an HTTP GET request.
+        hx-post - issues an HTTP POST request.
+        hx-put - issues an HTTP PUT request.
+        hx-patch - issues an HTTP PATCH request.
+        hx-delete - issues an HTTP DELETE request.
+    -->
     <h3>Target</h3>
     <div><span id="target">Target</span></div>
-    <button hx-post="/target"
+    <button
+            hx-post="/target"
             hx-trigger="click"
             hx-target="#target"
             hx-swap="innerHTML"
     >Render targeted HTML element!</button>
 
+    <h2>SWAP STYLES</h2>
+    <!-- innerHTML - The default, replace the inner html of the target element. -->
     <h3>Inner HTML</h3>
-    <button hx-post="/innerHTML"
+    <button hx-get="/getHTML"
             hx-trigger="click"
             hx-swap="innerHTML"
-    >Swap inner HTML!</button>
+    >Swap!</button>
 
+    <!-- outerHTML - Replace the entire target element with the response. -->
     <h3>Outer HTML</h3>
-    <button hx-post="/outerHTML"
+    <button hx-get="/getHTML"
             hx-trigger="click"
             hx-swap="outerHTML"
-    >Swap outer HTML!</button>
+    >Swap!</button>
 
-    <h3>Dialog Window</h3>
+    <!-- beforebegin - Insert the response before the target element. -->
+     <!-- TUN: hier tuts noch nicht -->
+    <h3 id="targetBeforeBegin">Beforebegin Target</h3>
+    <button hx-get="/getHTML"
+            hx-trigger="click"
+            hx-swap="beforebegin"
+            hx-target="#targetBeforeBegin"
+    >Swap!</button>
+    <!-- beforeend - Insert the response after the last child of the target element. -->
+    <!-- afterend - Insert the response after the target element. -->
+    <!-- delete - Deletes the target element regardless of the response. -->
+    <!-- none - No swap will be performed. -->
+
+    <h2>Dialog Window</h2>
     <div>
         <span class="btn"
                 hx-trigger="click"
