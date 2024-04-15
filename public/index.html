@@ -45,17 +45,40 @@
     >Swap!</button>
 
     <!-- beforebegin - Insert the response before the target element. -->
-     <!-- TUN: hier tuts noch nicht -->
-    <h3 id="targetBeforeBegin">Beforebegin Target</h3>
+    <h3>Beforebegin</h3>
+    <span id="targetBeforeBegin" style="display: block">target</span>
     <button hx-get="/getHTML"
             hx-trigger="click"
             hx-swap="beforebegin"
             hx-target="#targetBeforeBegin"
     >Swap!</button>
+
     <!-- beforeend - Insert the response after the last child of the target element. -->
+    <h3>Beforeend</h3>
+    <span id="targetBeforeEnd" style="display: block">target</span>
+    <button hx-get="/getHTML"
+            hx-trigger="click"
+            hx-swap="beforeend"
+            hx-target="#targetBeforeEnd"
+    >Swap!</button>
+
     <!-- afterend - Insert the response after the target element. -->
+    <h3>Afterend</h3>
+    <span id="targetAfterEnd" style="display: block">target</span>
+    <button hx-get="/getHTML"
+            hx-trigger="click"
+            hx-swap="afterend"
+            hx-target="#targetAfterEnd"
+    >Swap!</button>
+
     <!-- delete - Deletes the target element regardless of the response. -->
-    <!-- none - No swap will be performed. -->
+    <h3>Delete</h3>
+    <span id="targetDelete" style="display: block">target</span>
+    <button hx-get="/getHTML"
+            hx-trigger="click"
+            hx-swap="delete"
+            hx-target="#targetDelete"
+    >Swap!</button>
 
     <h2>Dialog Window</h2>
     <div>
