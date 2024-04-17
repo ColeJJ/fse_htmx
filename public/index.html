@@ -10,6 +10,34 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+    <h2>Expansion of HTML Hypermedia Control</h2>
+    <span
+            style="display: inline-block; padding-right: 3%"
+            hx-get="/getHTML"
+            hx-trigger="click"
+            hx-swap="outerHTML"
+    >Send Get Request!</span>
+    <h3
+            style="display: inline-block; padding-right: 3%"
+            hx-get="/getHTML"
+            hx-get="/getHTML"
+            hx-trigger="click"
+            hx-swap="outerHTML"
+    >Send Get Request!</h3>
+    <button
+            style="display: inline-block; margin-right: 3%"
+            hx-get="/getHTML"
+            hx-trigger="click"
+            hx-swap="outerHTML"
+    >Send Get Request!</button>
+    <img
+            class="fit-picture"
+            src="./../media/JavaScript-logo.png"
+            style="height: auto; max-width: 5%"
+            hx-get="/getJava"
+            hx-trigger="click"
+            hx-swap="outerHTML"
+    />
 
     <h2>REQUEST TYPES</h2>
     <!-- TODO:
@@ -21,9 +49,18 @@
         hx-delete - issues an HTTP DELETE request.
     -->
     <h3>Target</h3>
+    <div><span id="getTarget">Target</span></div>
+    <button
+            hx-post="/getHTML"
+            hx-trigger="click"
+            hx-target="#getTarget"
+            hx-swap="outerHTML"
+    >Send Get Request!</button>
+
+    <h3>Target</h3>
     <div><span id="target">Target</span></div>
     <button
-            hx-post="/target"
+            hx-post="/postHTML"
             hx-trigger="click"
             hx-target="#target"
             hx-swap="innerHTML"

@@ -21,6 +21,16 @@ app.get('/getHTML', (req, res) => {
  `);
 });
 
+app.get('/getJava', (req, res) => {
+    res.send(`
+        <img
+            class="fit-picture"
+            src="./media/java-logo.png"
+            style="height: auto; max-width: 5%"
+        />
+ `);
+});
+
 app.post('/dialog', (req, res) => {
     const response = req.header('hx-prompt')
     res.send(`
