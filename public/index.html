@@ -60,7 +60,7 @@
     <h3>POST</h3>
     <span style="display: block" id="postTarget">Target</span>
     <form
-        hx-post="/postHTML"
+        hx-post="/user"
         hx-target="#postTarget"
         hx-swap="outerHTML"
     >
@@ -76,7 +76,7 @@
         <span>Nachname: Controlling</span>
     </div>
     <form
-            hx-put="/putHTML"
+            hx-put="/user"
             hx-target="#putTarget"
             hx-swap="outerHTML"
     >
@@ -93,7 +93,7 @@
         <span>Nachname: Controlling</span>
     </div>
     <button
-            hx-delete="/deleteHTML"
+            hx-delete="/user"
             hx-target="#deleteTarget"
             hx-swap="outerHTML"
     >Delete User</button>

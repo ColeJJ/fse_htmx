@@ -11,19 +11,13 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.post('/target', (req, res) => {
-    res.send(`
-        <span>Target rendered</span>
-    `);
-});
-
 app.get('/getHTML', (req, res) => {
     res.send(`
         <span>returned html</span>
  `);
 });
 
-app.post('/postHTML', (req, res) => {
+app.post('/user', (req, res) => {
     const username = req.body.username;
     const email = req.body.email;
 
@@ -33,7 +27,7 @@ app.post('/postHTML', (req, res) => {
  `);
 });
 
-app.put('/putHTML', (req, res) => {
+app.put('/user', (req, res) => {
     const username = req.body.vorname;
     const email = req.body.nachname;
 
@@ -45,7 +39,7 @@ app.put('/putHTML', (req, res) => {
  `);
 });
 
-app.delete('/deleteHTML', (req, res) => {
+app.delete('/user', (req, res) => {
     res.send(`
         <span>User deleted!</span>
  `);
