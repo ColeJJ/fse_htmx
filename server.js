@@ -4,6 +4,8 @@ const port = 3000
 const path = require('path');
 
 app.use(express.static(__dirname));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -18,6 +20,34 @@ app.post('/target', (req, res) => {
 app.get('/getHTML', (req, res) => {
     res.send(`
         <span>returned html</span>
+ `);
+});
+
+app.post('/postHTML', (req, res) => {
+    const username = req.body.username;
+    const email = req.body.email;
+
+    res.send(`
+        <span>Username Input: ${username}</span>
+        <span>e-Mail Input: ${email}</span>
+ `);
+});
+
+app.put('/putHTML', (req, res) => {
+    const username = req.body.vorname;
+    const email = req.body.nachname;
+
+    res.send(`
+        <div>
+            <span>Vorname: ${username}</span>
+            <span>Nachname: ${email}</span>
+        </div>
+ `);
+});
+
+app.delete('/deleteHTML', (req, res) => {
+    res.send(`
+        <span>User deleted!</span>
  `);
 });
 
