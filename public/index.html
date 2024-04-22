@@ -50,13 +50,6 @@
             hx-swap="outerHTML"
     >Send Get Request!</button>
 
-    <!-- hx-post - issues an HTTP POST request. -->
-    <!-- By default, an element that causes a request will include its value if it has one. If the element is a form it will include the values of all inputs within it.
-    As with HTML forms, the name attribute of the input is used as the parameter name in the request that htmx sends.
-    Additionally, if the element causes a non-GET request, the values of all the inputs of the nearest enclosing form will be included.
-    If you wish to include the values of other elements, you can use the hx-include attribute with a CSS selector of all the elements whose values you want to include in the request.
-    If you wish to filter out some parameters you can use the hx-params attribute.
-    Finally, if you want to programmatically modify the parameters, you can use the htmx:configRequest event.-->
     <h3>POST</h3>
     <span style="display: block" id="postTarget">Target</span>
     <form
@@ -161,5 +154,8 @@
         </span>
         <div id="response"></div>
     </div>
+
+    <a href="https://example.com/page2">Zur Seite 2</a>
+
 </body>
 </html>
